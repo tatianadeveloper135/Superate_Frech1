@@ -1,0 +1,50 @@
+<<!DOCTYPE html>
+<html lang="es" >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width , initial-scale=1.0">
+    <title> Prueba operadores l+ogicos </title>
+  </head>
+  <body>
+      <h1 >Ordenar números de menor a mayor </h1>
+      <label for="edad"> Ingresa tu edad: </label>
+      <input type="number" id="edad"placeholder="Ej. 20">
+      <button onclick="evaluarOperadores()">Ver Resultado</button>
+
+      <p id=resultado></p>
+    <script>
+      function evaluarOperadores() {
+
+        let edad = parseInt(document.getElementsById('edad').value);
+        let tieneMembresia= true;
+        let esFindeSemana= true;
+        let esLunes=false;
+
+        let resultado="";
+
+        if (isNaN(edad) || edad <= 0) {
+          resultado ="Por favor, ingresa una edad válida.";
+        } else {
+          if (edad >=18 && tieneMembresia) {
+            resultado += "Puedes acceder al club. <br>";
+          }else {
+            resultado +="No puedes acceder al club. <br>";
+          }
+
+        if (edad >=18 || esFindeSemana) {
+          resultado += "Tienes permiso para asistir a la fiesta. <br>";
+        } else {
+          resultado += "No tienes permisp para asistir a la fiesta";
+        }
+        if (!esLunes) {
+          resultado += "  Hoy no es lunes, puedes relajarte. <br>";
+        } else {
+            resultado += "  Hoy es lunes, a trabajar. <br>";
+        }
+      }
+
+      document.getElementsById("resultado").innerHTML= resultado;
+
+    </script>
+    </body>
+    </html>
